@@ -151,7 +151,15 @@ local function normalize(path)
             path = mp.command_native({"normalize-path", path})
         else
             local directory = mp.get_property("working-directory", "")
+<<<<<<< HEAD
+<<<<<<< HEAD
             path = mp.utils.join_path(directory, path:gusb('^%.[\\/]',''))
+=======
+            path = utils.join_path(directory, path:gsub('^%.[\\/]',''))
+>>>>>>> upstream/master
+=======
+            path = utils.join_path(directory, path:gsub('^%.[\\/]',''))
+>>>>>>> upstream/master
             if is_windows then path = path:gsub("\\", "/") end
         end
         return path
